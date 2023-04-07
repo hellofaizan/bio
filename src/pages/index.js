@@ -5,18 +5,6 @@ import axios from 'axios'
 import { motion } from "framer-motion"
 
 const Home = () => {
-  const [data, setData] = useState(null);
-
-  useEffect(() => {
-    axios.get('https://hellofaizan.me/api/lanyard', {
-      method: 'GET',
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        setData(data);
-        console.log(data);
-      });
-  }, [data]);
 
   return (
     <>
