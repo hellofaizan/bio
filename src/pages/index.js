@@ -3,10 +3,8 @@ import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { motion } from "framer-motion"
-import { query } from '@/lib/db'
 
-const Home = ({posts}) => {  
-  console.log(posts)
+const Home = () => {
   const [data, setData] = useState(null);
 
   useEffect(() => {
@@ -32,15 +30,6 @@ const Home = ({posts}) => {
     </motion.div>
     </>
   )
-}
-
-export async function getStaticProps() {
-  const posts = await query('SELECT * FROM posts');
-  return {
-    props: {
-      posts,
-    },
-  };
 }
 
 export default Home
